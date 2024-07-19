@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        charset="utf-8">
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            color: #fff;
+            height: 100%;
+            background-color: #fafafa;
+            box-sizing: border-box;
+            background-color: rgba(23, 36, 43, 1);
+            background-size: contain;
+            background-position: bottom center;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid transparent;
+            position: relative;
+        }
+
+        body * {
+            box-sizing: border-box;
+        }
+    </style>
+
+    <style>
+        @font-face {
+            font-family: 'Clarity City';
+            src: url('font/ClarityCity-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        body {
+            font-family: 'Clarity City', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img id="bg" style="width: 100%;" src="images/mainBg.png" />
+
+    <script type="text/javascript" src="https://v1.alan.app/web/lib/alan_lib.min.js"></script>
+    <script>
+        var alanBtnInstance = alanBtn({
+            // use a key from yout project
+            key: "97d4e988f71f1ef97f171c3f6168fbed2e956eca572e1d8b807a3e2338fdd0dc/stage",
+            host: "v1.alan.app",
+            rootEl: document.getElementById("alan-btn"),
+        });
+    </script>
+
+    <script>
+        window.addEventListener('message', receiveMessage, false);
+
+        function receiveMessage(event) {
+            if (event.data === 'open-page-2') {
+                var bgEl = document.getElementById('bg');
+                bgEl.src = 'images/mainBg2.png'
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
